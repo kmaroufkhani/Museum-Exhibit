@@ -1,0 +1,276 @@
+/* Overall set up */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+header, footer {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    flex: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    margin: 0.5em;
+}
+
+h1, h2 {
+    margin: 0.3em;   
+}
+
+/********** Header ********/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Title on top of the page */
+.title {
+    color: #2a2d7c;
+    flex: 2;
+    font-size: small;
+    
+}
+#redText {
+    color: #c9523d;
+}
+
+/* Dummy buttons */
+#buttons {
+    margin-right: auto;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.dummy {
+    border: none;
+    background: none;
+    font-size: large;
+    font-weight: 100;
+}
+/* ******************************************************** */
+
+/********** Countdown box ********/
+#countDown {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-size: 70px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* ************************************ ***************/
+
+
+/**********  Name of the author and the Date ********/
+.NameDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.NameDate h1, .NameDate h2 {
+    text-align: center;
+}
+
+/* ************************************ ***************/
+
+/**********  Slideshow ********/
+.slideShow {
+    max-width: 800px;
+    margin: auto;   /* Horizontally center */
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+
+.slide {
+    position: relative;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.slide img {
+    width: 100%;
+}
+
+/* arrow buttons combined properties: */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    padding: 15px;
+    align-self: center;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+.prev:hover, .next:hover {
+    /* rgba is used instead of rgb for transparency */
+    background-color: rgba(0,0,0,0.5);
+}
+/* arrow buttons individual properties: */
+.next {
+    right: 0;
+}
+
+.number {
+    color: white;
+    font-size: small;
+    padding: 10px;
+    position: absolute;
+}
+
+.caption {
+    color: white;
+    padding: 10px;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    bottom: 5px;
+    text-align: center;
+}
+
+.slideDots {
+    text-align: center;
+    margin-top: 15px;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 1px;
+    background-color: #c6d2da;
+    border-radius: 50%; /* Make them circular */
+    display: inline-block;
+}
+.current, .dot:hover {
+    background-color: #778a93;
+}
+/* ************************************ ***************/
+
+/**********  Description paragraph ********/
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.descItem {
+    width: 60%;
+}
+/* ************************************ ***************/
+
+/********** Footer ********/
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color:#c6d2da;
+    font-size: small;
+    padding: 20px;
+}
+
+.address p {
+    margin: 0;
+}
+
+.hours ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.hours li {
+    padding: 5px 0px;
+}
+
+.announce {
+    padding-right: 20px;
+}
+
+.announce p {
+    margin: 0;
+}
+
+/* ************************************ ***************/
+
+/************* Tablet View ************/
+@media (max-width: 768px) {
+    .slideShow {
+        width: 80%;
+    }
+
+    .descItem {
+        width: 80%;
+    }
+}
+/* ************************************ ***************/
+
+/************* Mobile View ************/
+@media (max-width: 600px) {
+    #countDown {
+        padding: 20px;
+        font-size: 60px;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+    }
+
+    .hours li {
+        padding: 0;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    header p {
+        text-align: center;
+    }
+
+    #buttons {
+        margin-right: 0;
+        justify-content: space-between;
+        padding: 10px 30px 0 30px;
+    }
+
+    .NameDate h1 {
+        font-size: 1.5em;
+    }
+
+    .NameDate h2 {
+        font-size: 1.1em;
+    }
+
+    .slideShow {
+        width: 100%;
+        background-color: black;
+    }
+
+    .caption {
+        padding: 10px 0;
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+
+    .descItem {
+        width: 90%;
+    }
+}
+/* ************************************ ***************/
